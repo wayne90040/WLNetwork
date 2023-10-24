@@ -7,17 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06E092AF8BCE37FCB36A77416CDFEDF9 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B720E864FC64B938D26137C808B39B31 /* HttpMethod.swift */; };
+		08A7BFDA81C65EC1CEBC795B585F9DCC /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36532E41BCC96EF84BA70DE70BD6FA0D /* ContentType.swift */; };
+		28A59D968ECEA9F218488FF98F493396 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		317D25469683A32E80258D28283E706A /* WLNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2885484A60E56582AD8FDB8D491C8EF /* WLNetwork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A1CC8681745B9C3318BD646EBE21C99 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46FF65F7CDB175A5DCE6D16517158E4 /* Session.swift */; };
 		57012E57D798852007467CC7CE7CB248 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		657EE320E113C8E7F9597666C617C9FB /* WLNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 057FDC37F80A6CB116124A8AF55678F6 /* WLNetwork-dummy.m */; };
-		86D2681377F2944067DB458E239D9A18 /* WLNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F249F052DD0895F34EC3307FAB5CCF /* WLNetwork.swift */; };
+		58DD063E97C266A3F30BFD491936480F /* WLNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D99FBEA98CA00843398FC31834EBEB /* WLNetwork.swift */; };
 		8941AA546FCAE2898DFAEA18090ADEF6 /* Pods-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6D7C498FA339E02BD53ECB8916CEA8E /* Pods-Example-dummy.m */; };
-		DB97C0EB662F2A1CB4AB89AF48CFB72F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B68C306065195441AA2FA2B2BFAC38A9 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9126C3EF535254FDDCE2A1F63115D9 /* URL+Extensions.swift */; };
+		D585F72DC01539C1C600D4F81ECF581B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFAF73D3E92C63915D422CB30B32FAE /* Request.swift */; };
+		D75B1FAC46BB75F279C35BB81872333A /* WLNetwork-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E13F4E822C26F8AD87E16AE8409F0837 /* WLNetwork-dummy.m */; };
 		E48BC519FD1513F66239B20B9831BA84 /* Pods-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7825A90E082A1582EB16256B0E722B3F /* Pods-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F128C0EDD696FE6F860D010F77DEF509 /* WLNetwork-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 12BC6C420CFCC554CD7A960C2DB173FD /* WLNetwork-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB493AFE6FC2EE677C0902205C9AF8FF /* RequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A4BF0376D3C425C5E192AD69AA4409 /* RequestAdapter.swift */; };
+		F060C81AF5FEA7B2FDE2ABFE9D120CED /* Decision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DFD4180753CE52FD83A4F58934EABC8 /* Decision.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0EE8CA7C81964A03288858E2C2ADAAF0 /* PBXContainerItemProxy */ = {
+		519220FD8FFFDB9CF5C1A7AB9C8BE0E8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -27,28 +34,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		057FDC37F80A6CB116124A8AF55678F6 /* WLNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WLNetwork-dummy.m"; sourceTree = "<group>"; };
-		0AD5A8412B412A2512437DCC47FCBD16 /* WLNetwork.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WLNetwork.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		12BC6C420CFCC554CD7A960C2DB173FD /* WLNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WLNetwork-umbrella.h"; sourceTree = "<group>"; };
-		1CF9B22BB7A00B3A5E7C9C142D854480 /* WLNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WLNetwork.modulemap; sourceTree = "<group>"; };
+		13A4BF0376D3C425C5E192AD69AA4409 /* RequestAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestAdapter.swift; sourceTree = "<group>"; };
+		1BFAF73D3E92C63915D422CB30B32FAE /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		1F667CC0E19EAF34E5A4119E2121F585 /* Pods-Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Example"; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21E607D76334F239BD09721827B31F9E /* WLNetwork-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WLNetwork-prefix.pch"; sourceTree = "<group>"; };
 		243410B9535472556EA4BB6DBC133A0D /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		2DFD4180753CE52FD83A4F58934EABC8 /* Decision.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Decision.swift; sourceTree = "<group>"; };
 		31C1D37707DFAA5E6A164BCC07834264 /* Pods-Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-Info.plist"; sourceTree = "<group>"; };
 		35C305D3797C284E6F5BAA1D3E6F9BF8 /* Pods-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Example.modulemap"; sourceTree = "<group>"; };
+		35D99FBEA98CA00843398FC31834EBEB /* WLNetwork.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WLNetwork.swift; path = Sources/WLNetwork/WLNetwork.swift; sourceTree = "<group>"; };
+		36532E41BCC96EF84BA70DE70BD6FA0D /* ContentType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		441854E35F81731E63E53DC7E4EEAD9D /* Pods-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		59240C80E70C3AD7D62AAA8479048181 /* WLNetwork-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WLNetwork-Info.plist"; sourceTree = "<group>"; };
+		523BF0F2E4D56F6FE535A9916A314AE8 /* WLNetwork-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WLNetwork-prefix.pch"; sourceTree = "<group>"; };
 		60AA2FAF7261AACBEF0E483C5A744C80 /* WLNetwork */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WLNetwork; path = WLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60E481BAFD221DBD7E5C3FAC1C709F97 /* WLNetwork.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = WLNetwork.modulemap; sourceTree = "<group>"; };
+		6CCD7574DCED8A1428E7CF557CA1C2B9 /* WLNetwork-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WLNetwork-Info.plist"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7825A90E082A1582EB16256B0E722B3F /* Pods-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-umbrella.h"; sourceTree = "<group>"; };
-		90F249F052DD0895F34EC3307FAB5CCF /* WLNetwork.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WLNetwork.swift; path = Sources/WLNetwork/WLNetwork.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0B43A98EBF9CCF42FA4BA51A39B6007 /* WLNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WLNetwork.debug.xcconfig; sourceTree = "<group>"; };
 		AFECBC24E09D0D25F822C27BD944AFD4 /* Pods-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-frameworks.sh"; sourceTree = "<group>"; };
+		B2885484A60E56582AD8FDB8D491C8EF /* WLNetwork-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WLNetwork-umbrella.h"; sourceTree = "<group>"; };
 		B45138496B85A072654D1D0F8EBBEDE5 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B720E864FC64B938D26137C808B39B31 /* HttpMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		CEC8E310F1853AF18CE1A7B57BA5B511 /* WLNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WLNetwork.release.xcconfig; sourceTree = "<group>"; };
 		D6D7C498FA339E02BD53ECB8916CEA8E /* Pods-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-dummy.m"; sourceTree = "<group>"; };
+		DCCF83AC4614CD5944C1C59E66366D59 /* WLNetwork.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = WLNetwork.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DD9126C3EF535254FDDCE2A1F63115D9 /* URL+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+Extensions.swift"; path = "Sources/WLNetwork/URL+Extensions.swift"; sourceTree = "<group>"; };
+		E13F4E822C26F8AD87E16AE8409F0837 /* WLNetwork-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WLNetwork-dummy.m"; sourceTree = "<group>"; };
+		E46FF65F7CDB175A5DCE6D16517158E4 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Sources/WLNetwork/Session.swift; sourceTree = "<group>"; };
+		E8BF1C144BD64AEEB020D04F2B9D03BB /* WLNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WLNetwork.debug.xcconfig; sourceTree = "<group>"; };
 		EA21B344259B58996DB73382B1B1521F /* Pods-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		EEACF093511E6B57DCEAFB42C1D07500 /* WLNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = WLNetwork.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,30 +74,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		256A3A2A03F67409E75D72D5122C393A /* Frameworks */ = {
+		1FFECEEBE6EE6AABCC6523D3C77BACE6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB97C0EB662F2A1CB4AB89AF48CFB72F /* Foundation.framework in Frameworks */,
+				28A59D968ECEA9F218488FF98F493396 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0BA4B5D396224EB351DB0E3A8D24C703 /* Support Files */ = {
+		204DCC9E131E48088582AD79BED3D4D1 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1CF9B22BB7A00B3A5E7C9C142D854480 /* WLNetwork.modulemap */,
-				057FDC37F80A6CB116124A8AF55678F6 /* WLNetwork-dummy.m */,
-				59240C80E70C3AD7D62AAA8479048181 /* WLNetwork-Info.plist */,
-				21E607D76334F239BD09721827B31F9E /* WLNetwork-prefix.pch */,
-				12BC6C420CFCC554CD7A960C2DB173FD /* WLNetwork-umbrella.h */,
-				A0B43A98EBF9CCF42FA4BA51A39B6007 /* WLNetwork.debug.xcconfig */,
-				EEACF093511E6B57DCEAFB42C1D07500 /* WLNetwork.release.xcconfig */,
+				F9BCDE6AF14278C764A18DFA93BF4385 /* WLNetwork */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/WLNetwork";
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		25231E6CAA27A562473128F989287444 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				36532E41BCC96EF84BA70DE70BD6FA0D /* ContentType.swift */,
+				B720E864FC64B938D26137C808B39B31 /* HttpMethod.swift */,
+				1BFAF73D3E92C63915D422CB30B32FAE /* Request.swift */,
+			);
+			name = Request;
+			path = Sources/WLNetwork/Request;
+			sourceTree = "<group>";
+		};
+		2FE0CEFAD928557805F02A95CDB8EDC1 /* RequestAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				13A4BF0376D3C425C5E192AD69AA4409 /* RequestAdapter.swift */,
+			);
+			name = RequestAdapter;
+			path = Sources/WLNetwork/RequestAdapter;
+			sourceTree = "<group>";
+		};
+		43C6B3ECB156525A788AF02055C64D57 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				DCCF83AC4614CD5944C1C59E66366D59 /* WLNetwork.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -92,14 +127,6 @@
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		92D9CC4C7ADE6052E79899418A2C83BE /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F624CF8E37233A257365F5109B99CD17 /* WLNetwork */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		9BDBD95ED116334D1B2835202D8D3060 /* Pods-Example */ = {
@@ -119,12 +146,13 @@
 			path = "Target Support Files/Pods-Example";
 			sourceTree = "<group>";
 		};
-		B1590569AD5934F7B77897E01B6F740C /* Pod */ = {
+		ADC0B19FEFCB1BAB1397F29E6D518A88 /* Decision */ = {
 			isa = PBXGroup;
 			children = (
-				0AD5A8412B412A2512437DCC47FCBD16 /* WLNetwork.podspec */,
+				2DFD4180753CE52FD83A4F58934EABC8 /* Decision.swift */,
 			);
-			name = Pod;
+			name = Decision;
+			path = Sources/WLNetwork/Decision;
 			sourceTree = "<group>";
 		};
 		BECC1E3B0288A49759558E78C5909D89 /* Products */ = {
@@ -148,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				92D9CC4C7ADE6052E79899418A2C83BE /* Development Pods */,
+				204DCC9E131E48088582AD79BED3D4D1 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				BECC1E3B0288A49759558E78C5909D89 /* Products */,
 				CE2E825F08D3AD0FD76E6D78D7512ED0 /* Targets Support Files */,
@@ -163,12 +191,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F624CF8E37233A257365F5109B99CD17 /* WLNetwork */ = {
+		ED11C04390B9F56B02F8E44EEA7094CE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				90F249F052DD0895F34EC3307FAB5CCF /* WLNetwork.swift */,
-				B1590569AD5934F7B77897E01B6F740C /* Pod */,
-				0BA4B5D396224EB351DB0E3A8D24C703 /* Support Files */,
+				60E481BAFD221DBD7E5C3FAC1C709F97 /* WLNetwork.modulemap */,
+				E13F4E822C26F8AD87E16AE8409F0837 /* WLNetwork-dummy.m */,
+				6CCD7574DCED8A1428E7CF557CA1C2B9 /* WLNetwork-Info.plist */,
+				523BF0F2E4D56F6FE535A9916A314AE8 /* WLNetwork-prefix.pch */,
+				B2885484A60E56582AD8FDB8D491C8EF /* WLNetwork-umbrella.h */,
+				E8BF1C144BD64AEEB020D04F2B9D03BB /* WLNetwork.debug.xcconfig */,
+				CEC8E310F1853AF18CE1A7B57BA5B511 /* WLNetwork.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/WLNetwork";
+			sourceTree = "<group>";
+		};
+		F9BCDE6AF14278C764A18DFA93BF4385 /* WLNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				E46FF65F7CDB175A5DCE6D16517158E4 /* Session.swift */,
+				DD9126C3EF535254FDDCE2A1F63115D9 /* URL+Extensions.swift */,
+				35D99FBEA98CA00843398FC31834EBEB /* WLNetwork.swift */,
+				ADC0B19FEFCB1BAB1397F29E6D518A88 /* Decision */,
+				43C6B3ECB156525A788AF02055C64D57 /* Pod */,
+				25231E6CAA27A562473128F989287444 /* Request */,
+				2FE0CEFAD928557805F02A95CDB8EDC1 /* RequestAdapter */,
+				ED11C04390B9F56B02F8E44EEA7094CE /* Support Files */,
 			);
 			name = WLNetwork;
 			path = ../..;
@@ -177,11 +225,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		67088F939FC380C313458C3BD8815526 /* Headers */ = {
+		C654F11E6772B41A04DCB493D7A9B0B2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F128C0EDD696FE6F860D010F77DEF509 /* WLNetwork-umbrella.h in Headers */,
+				317D25469683A32E80258D28283E706A /* WLNetwork-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +256,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				309267226D1534019EC10F7BA3953347 /* PBXTargetDependency */,
+				048BD5E98A5A1E1B69CC0A541FDE4BBA /* PBXTargetDependency */,
 			);
 			name = "Pods-Example";
 			productName = Pods_Example;
@@ -217,12 +265,12 @@
 		};
 		1061E488BD143856304CB481BFFB89CE /* WLNetwork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4290BC1B1CBE806F054074EC5C5BEA1C /* Build configuration list for PBXNativeTarget "WLNetwork" */;
+			buildConfigurationList = 1709E840682C8F1FA95191706A6E260C /* Build configuration list for PBXNativeTarget "WLNetwork" */;
 			buildPhases = (
-				67088F939FC380C313458C3BD8815526 /* Headers */,
-				F127939BE9D9F45D4E1F80FE1943E9D8 /* Sources */,
-				256A3A2A03F67409E75D72D5122C393A /* Frameworks */,
-				46DF26E2CC336E1521C84676B04FAC24 /* Resources */,
+				C654F11E6772B41A04DCB493D7A9B0B2 /* Headers */,
+				363D3D578FABE921A76662A5057AC267 /* Sources */,
+				1FFECEEBE6EE6AABCC6523D3C77BACE6 /* Frameworks */,
+				D5C102016D7442CC7CB89BA28371B6C5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -239,8 +287,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -262,7 +310,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		46DF26E2CC336E1521C84676B04FAC24 /* Resources */ = {
+		D5C102016D7442CC7CB89BA28371B6C5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +327,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		363D3D578FABE921A76662A5057AC267 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08A7BFDA81C65EC1CEBC795B585F9DCC /* ContentType.swift in Sources */,
+				F060C81AF5FEA7B2FDE2ABFE9D120CED /* Decision.swift in Sources */,
+				06E092AF8BCE37FCB36A77416CDFEDF9 /* HttpMethod.swift in Sources */,
+				D585F72DC01539C1C600D4F81ECF581B /* Request.swift in Sources */,
+				EB493AFE6FC2EE677C0902205C9AF8FF /* RequestAdapter.swift in Sources */,
+				3A1CC8681745B9C3318BD646EBE21C99 /* Session.swift in Sources */,
+				B68C306065195441AA2FA2B2BFAC38A9 /* URL+Extensions.swift in Sources */,
+				58DD063E97C266A3F30BFD491936480F /* WLNetwork.swift in Sources */,
+				D75B1FAC46BB75F279C35BB81872333A /* WLNetwork-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BF45529196546CFCAF7B7969ADC9909 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,30 +351,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F127939BE9D9F45D4E1F80FE1943E9D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				86D2681377F2944067DB458E239D9A18 /* WLNetwork.swift in Sources */,
-				657EE320E113C8E7F9597666C617C9FB /* WLNetwork-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		309267226D1534019EC10F7BA3953347 /* PBXTargetDependency */ = {
+		048BD5E98A5A1E1B69CC0A541FDE4BBA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = WLNetwork;
 			target = 1061E488BD143856304CB481BFFB89CE /* WLNetwork */;
-			targetProxy = 0EE8CA7C81964A03288858E2C2ADAAF0 /* PBXContainerItemProxy */;
+			targetProxy = 519220FD8FFFDB9CF5C1A7AB9C8BE0E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		554C5EE42F9F01C3E8DD37DD69F0A07C /* Debug */ = {
+		0B35D85F18AF6D705197890CEF959878 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B45138496B85A072654D1D0F8EBBEDE5 /* Pods-Example.debug.xcconfig */;
+			baseConfigurationReference = 243410B9535472556EA4BB6DBC133A0D /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -324,7 +379,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-Example/Pods-Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,14 +395,50 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0DCE2AD98500DE29EA5179F953015910 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8BF1C144BD64AEEB020D04F2B9D03BB /* WLNetwork.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WLNetwork/WLNetwork-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WLNetwork/WLNetwork-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/WLNetwork/WLNetwork.modulemap";
+				PRODUCT_MODULE_NAME = WLNetwork;
+				PRODUCT_NAME = WLNetwork;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		670F10D3962F61C7DA0700BEE63F04D9 /* Release */ = {
+		6060EE9ACB0DD27E519184E90D82EC8A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEACF093511E6B57DCEAFB42C1D07500 /* WLNetwork.release.xcconfig */;
+			baseConfigurationReference = CEC8E310F1853AF18CE1A7B57BA5B511 /* WLNetwork.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -381,7 +472,7 @@
 			};
 			name = Release;
 		};
-		6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */ = {
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -434,7 +525,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -447,80 +538,7 @@
 			};
 			name = Debug;
 		};
-		8B32CD3FBC29DD857D9E387C1F99F8D7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 243410B9535472556EA4BB6DBC133A0D /* Pods-Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Example/Pods-Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Example/Pods-Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D145702605C20F6F3B13F1A357CE9DF9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0B43A98EBF9CCF42FA4BA51A39B6007 /* WLNetwork.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/WLNetwork/WLNetwork-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/WLNetwork/WLNetwork-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/WLNetwork/WLNetwork.modulemap";
-				PRODUCT_MODULE_NAME = WLNetwork;
-				PRODUCT_NAME = WLNetwork;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E873CA97BD124B21839AF13C9BE1CD18 /* Release */ = {
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -570,7 +588,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,14 +600,51 @@
 			};
 			name = Release;
 		};
+		BD963B0EAA423C9FF8F3D6435677795A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B45138496B85A072654D1D0F8EBBEDE5 /* Pods-Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Example/Pods-Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Example/Pods-Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4290BC1B1CBE806F054074EC5C5BEA1C /* Build configuration list for PBXNativeTarget "WLNetwork" */ = {
+		1709E840682C8F1FA95191706A6E260C /* Build configuration list for PBXNativeTarget "WLNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D145702605C20F6F3B13F1A357CE9DF9 /* Debug */,
-				670F10D3962F61C7DA0700BEE63F04D9 /* Release */,
+				0DCE2AD98500DE29EA5179F953015910 /* Debug */,
+				6060EE9ACB0DD27E519184E90D82EC8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -597,8 +652,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6A5C026ED62BBFE3380CD257EEFAEB20 /* Debug */,
-				E873CA97BD124B21839AF13C9BE1CD18 /* Release */,
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -606,8 +661,8 @@
 		C87534FA438F9EF02427A8DA6743AC50 /* Build configuration list for PBXNativeTarget "Pods-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				554C5EE42F9F01C3E8DD37DD69F0A07C /* Debug */,
-				8B32CD3FBC29DD857D9E387C1F99F8D7 /* Release */,
+				BD963B0EAA423C9FF8F3D6435677795A /* Debug */,
+				0B35D85F18AF6D705197890CEF959878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

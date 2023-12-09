@@ -4,6 +4,19 @@ import Foundation
 public protocol Decision {
     func shouldApply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) -> Bool
     func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse, completion: @escaping(DecisionAction<T>) -> Void)
+
+    @available(iOS 13.0.0, *)
+    func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) async -> DecisionAction<T>
+}
+
+extension Decision {
+    public func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse, completion: @escaping(DecisionAction<T>) -> Void) {
+    }
+
+    @available(iOS 13.0.0, *)
+    public func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) async -> DecisionAction<T> {
+        .stop(WLNetworkError.decisionFailed(reason: .missingDefine))
+    }
 }
 
 public enum DecisionAction<T: Request> {

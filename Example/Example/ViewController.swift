@@ -9,11 +9,21 @@ class ViewController: UIViewController {
             switch $0 {
             case .success(let response):
                 print(response)
-                
             case .failure(let error):
                 print(error)
             }
         }
+
+        Task {
+            let result = await API.getStockTW()
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error)
+            }
+        }
+
     }
 }
 

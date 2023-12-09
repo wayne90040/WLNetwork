@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61D9E56C56B5D743E61595B0 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEFED3D90F42DB667E1BD82 /* Pods_Example.framework */; };
+		68477AF32B2409C600B8E73E /* StockTWResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68477AF22B2409C600B8E73E /* StockTWResponse.swift */; };
 		68B86A802AE187E0004BD8C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B86A7F2AE187E0004BD8C3 /* AppDelegate.swift */; };
 		68B86A822AE187E0004BD8C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B86A812AE187E0004BD8C3 /* SceneDelegate.swift */; };
 		68B86A842AE187E0004BD8C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B86A832AE187E0004BD8C3 /* ViewController.swift */; };
@@ -15,7 +16,6 @@
 		68B86A892AE187E1004BD8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B86A882AE187E1004BD8C3 /* Assets.xcassets */; };
 		68B86A8C2AE187E1004BD8C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68B86A8A2AE187E1004BD8C3 /* LaunchScreen.storyboard */; };
 		68B86A952AE811B8004BD8C3 /* StockTWRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B86A942AE811B8004BD8C3 /* StockTWRequest.swift */; };
-		68B86A982AE81C20004BD8C3 /* JsonDecodeDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B86A972AE81C20004BD8C3 /* JsonDecodeDecision.swift */; };
 		68B86A9B2AE81D0E004BD8C3 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B86A9A2AE81D0E004BD8C3 /* TokenAdapter.swift */; };
 		CE7998F42AE26B7C00AA6633 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7998F32AE26B7C00AA6633 /* API.swift */; };
 /* End PBXBuildFile section */
@@ -23,6 +23,7 @@
 /* Begin PBXFileReference section */
 		05ACBAB95C2A5B0FB32F033B /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		5FEFED3D90F42DB667E1BD82 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68477AF22B2409C600B8E73E /* StockTWResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTWResponse.swift; sourceTree = "<group>"; };
 		68B86A7C2AE187E0004BD8C3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B86A7F2AE187E0004BD8C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68B86A812AE187E0004BD8C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +33,6 @@
 		68B86A8B2AE187E1004BD8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68B86A8D2AE187E1004BD8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68B86A942AE811B8004BD8C3 /* StockTWRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTWRequest.swift; sourceTree = "<group>"; };
-		68B86A972AE81C20004BD8C3 /* JsonDecodeDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecodeDecision.swift; sourceTree = "<group>"; };
 		68B86A9A2AE81D0E004BD8C3 /* TokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
 		B3CC25CC63AFDFC309A51ACC /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CE7998F32AE26B7C00AA6633 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -50,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68477AF12B2409B400B8E73E /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				68477AF22B2409C600B8E73E /* StockTWResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		68B86A732AE187E0004BD8C3 = {
 			isa = PBXGroup;
 			children = (
@@ -91,14 +99,6 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		68B86A962AE81C11004BD8C3 /* Decision */ = {
-			isa = PBXGroup;
-			children = (
-				68B86A972AE81C20004BD8C3 /* JsonDecodeDecision.swift */,
-			);
-			path = Decision;
-			sourceTree = "<group>";
-		};
 		68B86A992AE81D05004BD8C3 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +127,8 @@
 		CE7998F52AE26BA500AA6633 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				68477AF12B2409B400B8E73E /* Response */,
 				68B86A992AE81D05004BD8C3 /* Adapter */,
-				68B86A962AE81C11004BD8C3 /* Decision */,
 				68B86A932AE80F4C004BD8C3 /* Request */,
 				CE7998F32AE26B7C00AA6633 /* API.swift */,
 			);
@@ -253,9 +253,9 @@
 				68B86A842AE187E0004BD8C3 /* ViewController.swift in Sources */,
 				68B86A952AE811B8004BD8C3 /* StockTWRequest.swift in Sources */,
 				68B86A802AE187E0004BD8C3 /* AppDelegate.swift in Sources */,
-				68B86A982AE81C20004BD8C3 /* JsonDecodeDecision.swift in Sources */,
 				CE7998F42AE26B7C00AA6633 /* API.swift in Sources */,
 				68B86A9B2AE81D0E004BD8C3 /* TokenAdapter.swift in Sources */,
+				68477AF32B2409C600B8E73E /* StockTWResponse.swift in Sources */,
 				68B86A822AE187E0004BD8C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

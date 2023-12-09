@@ -1,10 +1,14 @@
-public enum HttpMethod {
-    case Get
-    case Post
-    case Put
-    case Delete
+public enum HttpMethod: String {
+    case Get = "Get"
+    case Post = "Post"
+    case Put = "Put"
+    case Delete = "Delete"
 }
 
-extension HttpMethod {
-
+public extension HttpMethod {
+    var adapter: AnyRequestAdapter {
+        .init {
+            $0.httpMethod = rawValue
+        }
+    }
 }

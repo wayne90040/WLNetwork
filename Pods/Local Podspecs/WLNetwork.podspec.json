@@ -1,0 +1,21 @@
+{
+  "name": "WLNetwork",
+  "version": "0.0.1",
+  "swift_versions": "5.0.0",
+  "summary": "Network",
+  "description": "Network",
+  "homepage": "https://github.com/wayne90040/WLNetwork.git",
+  "license": "MIT",
+  "authors": {
+    "WEILUN": "wayne90040@gmail.com"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source": {
+    "git": "https://github.com/wayne90040/WLNetwork.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "Sources/**/*.{h,m,swift}",
+  "swift_version": "5.0.0"
+}

@@ -6,8 +6,6 @@ struct StockTWRequest: Request {
     
     var method: HttpMethod = .Get
     
-//    var baseURL: URL =
-    
     var contentType: ContentType = .json
     
     var path: String = "/v8/finance/chart/2330.TW"
@@ -19,10 +17,14 @@ struct StockTWRequest: Request {
         .init(name: "events", value: "history"),
         .init(name: "", value: "hP2rOschxO0")
     ]
-    
-    var defaultAdapter: [RequestAdapter] = []
-    
-    var specifiAdapter: [RequestAdapter] = []
+
+    var parameters: Parameters? = [
+        "period1": "1626969600",
+        "period2": "1627277400",
+        "interval": "1d",
+        "events": "history",
+        "": "hP2rOschxO0"
+    ]
     
     var decisions: [Decision] = [
         JsonDecodeDecision()
@@ -33,8 +35,4 @@ extension Request {
     var baseURL: URL {
         .init(string: "https://query1.finance.yahoo.com")!
     }
-}
-
-struct StockTWResponse: Codable {
-    
 }

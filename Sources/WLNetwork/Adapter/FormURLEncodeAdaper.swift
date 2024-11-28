@@ -1,3 +1,5 @@
+import Foundation
+
 public struct FormURLEncodeAdaper: RequestAdapter, Parameterable {
 
     public var parameters: Parameters

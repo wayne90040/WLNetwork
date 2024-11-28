@@ -1,3 +1,5 @@
+import Foundation
+
 public struct JsonParameterAdapter: RequestAdapter, Parameterable {
     
     public var parameters: Parameters

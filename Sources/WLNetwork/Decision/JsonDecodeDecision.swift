@@ -1,13 +1,13 @@
+import Foundation
+
 public struct JsonDecodeDecision: Decision {
-
-    public init() {
-        
-    }
-
+    
+    public init() { }
+    
     public func shouldApply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) -> Bool {
         true
     }
-
+    
     public func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse, completion: @escaping (DecisionAction<T>) -> Void) {
         do {
             let value = try JSONDecoder().decode(T.Response.self, from: data)
@@ -15,7 +15,7 @@ public struct JsonDecodeDecision: Decision {
         }
         catch { }
     }
-
+    
     @available(iOS 13.0.0, *)
     public func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) async -> DecisionAction<T> {
         do {
@@ -27,4 +27,3 @@ public struct JsonDecodeDecision: Decision {
         }
     }
 }
-

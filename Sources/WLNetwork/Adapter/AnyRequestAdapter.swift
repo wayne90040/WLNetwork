@@ -1,3 +1,5 @@
+import Foundation
+
 public struct AnyRequestAdapter: RequestAdapter {
 
     public var block: (inout URLRequest) throws -> Void

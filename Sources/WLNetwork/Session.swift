@@ -89,8 +89,19 @@ public extension Session {
 
 @available(iOS 13.0.0, *)
 public extension Session {
+    
+    func trySend<T: Request>(_ request: T) async throws -> T.Response? {
+        let res = await sendAsync(request)
+        switch res {
+        case .success(let resp):
+            return resp
 
-    func send<T: Request>(_ request: T) async -> Result<T.Response, Error> {
+        case .failure(let err):
+            throw err
+        }
+    }
+
+    func sendAsync<T: Request>(_ request: T) async -> Result<T.Response, Error> {
         let urlReq: URLRequest
 
         do {
@@ -132,7 +143,7 @@ public extension Session {
             return await handleDecision(request, data: data, response: response, decisions: decisions)
 
         case .retryWith(_):
-            return await send(request)
+            return await sendAsync(request)
 
         case .stop(let err):
             return .failure(WLNetworkError.decisionFailed(.stop(err)))

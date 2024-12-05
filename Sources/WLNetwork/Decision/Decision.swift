@@ -1,8 +1,9 @@
 import Foundation
 
-// TODO: Support `async`
 public protocol Decision {
+    
     func shouldApply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) -> Bool
+    
     func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse, completion: @escaping(DecisionAction<T>) -> Void)
 
     @available(iOS 13.0.0, *)
@@ -15,7 +16,7 @@ extension Decision {
 
     @available(iOS 13.0.0, *)
     public func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) async -> DecisionAction<T> {
-        .stop(WLNetworkError.decisionFailed(reason: .missingDefine))
+        .continueWith(data, response)
     }
 }
 
@@ -31,5 +32,4 @@ public enum DecisionAction<T: Request> {
     case stop(Error)
     
     case done(T.Response)
-    
 }

@@ -1,25 +1,29 @@
 public enum WLNetworkError: Error {
-    case requestFailed(reason: RequestFailed)
-
-    case decisionFailed(reason: DecisionFailed)
-
-    case sessionFailed(reason: SessionFaild)
-}
-
-public extension WLNetworkError {
-    enum DecisionFailed {
+    
+    public enum CrtReqFailed {
+        
+        case jsonEncodeFailed(Error)
+        
+        case missingURL
+        
+        case URLComponentNil
+    }
+    
+    public enum DecisionFailed {
         case missingDefine
-
         case emptyDecision
-
         case stop(Error)
     }
-}
-
-public extension WLNetworkError {
-    enum SessionFaild {
+    
+    public enum SendFailed {
         case failed(Error)
 
         case missingResponse
     }
+    
+    case crtReqFailed(CrtReqFailed)
+
+    case decisionFailed(DecisionFailed)
+
+    case sendFailed(SendFailed)
 }

@@ -14,7 +14,7 @@ public struct JsonParameterAdapter: RequestAdapter, Parameterable {
             request.httpBody = body
         }
         catch {
-            throw WLNetworkError.requestFailed(reason: .jsonEncodeFailed(error))
+            throw WLNetworkError.crtReqFailed(.jsonEncodeFailed(error))
         }
     }
 }

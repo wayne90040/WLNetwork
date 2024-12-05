@@ -9,9 +9,8 @@ public struct URLQueryAdapter: RequestAdapter, Parameterable {
     }
     
     public func adapted(_ request: inout URLRequest) throws {
-        
         guard let url = request.url else {
-            throw WLNetworkError.requestFailed(reason: .missingURL)
+            throw WLNetworkError.crtReqFailed(.missingURL)
         }
         
         let queries = parameters.map {
@@ -19,7 +18,7 @@ public struct URLQueryAdapter: RequestAdapter, Parameterable {
         }
         
         guard var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
-            throw WLNetworkError.requestFailed(reason: .URLComponentNil)
+            throw WLNetworkError.crtReqFailed(.URLComponentNil)
         }
         
         components.queryItems = queries

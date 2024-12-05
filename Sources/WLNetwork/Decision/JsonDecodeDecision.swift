@@ -13,7 +13,9 @@ public struct JsonDecodeDecision: Decision {
             let value = try JSONDecoder().decode(T.Response.self, from: data)
             completion(.done(value))
         }
-        catch { }
+        catch { 
+            completion(.stop(WLNetworkError.decisionFailed(.stop(error))))
+        }
     }
     
     @available(iOS 13.0.0, *)
@@ -23,7 +25,7 @@ public struct JsonDecodeDecision: Decision {
             return .done(value)
         }
         catch {
-            return .stop(WLNetworkError.decisionFailed(reason: .stop(error)))
+            return .stop(WLNetworkError.decisionFailed(.stop(error)))
         }
     }
 }

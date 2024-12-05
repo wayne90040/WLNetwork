@@ -8,43 +8,38 @@ public class Session {
         self.session = session
     }
 
-    private func create<T: Request>(_ request: T) throws -> URLRequest{
+    private func crtReq<T: Request>(_ request: T) throws -> URLRequest{
         let url = request.baseURL
             .appendingPathComponentIfNotEmpty(request)
 
-        var urlRequest = URLRequest(url: url, cachePolicy: request.cachePolicy, timeoutInterval: request.timeout)
+        var urlReq = URLRequest(url: url, cachePolicy: request.cachePolicy, timeoutInterval: request.timeout)
 
-        request.adapters.forEach {
-            do {
-                try $0.adapted(&urlRequest)
-            }
-            catch {
-                debugPrint("Create URLquest Error: \(error)")
-            }
-        }
-        return urlRequest
+        try request.adapters.forEach { try $0.adapted(&urlReq) }
+
+        return urlReq
     }
 }
 
 public extension Session {
 
     func send<T: Request>(_ request: T, completion: @escaping(Result<T.Response, Error>) -> Void) {
-        let urlRequest: URLRequest
+        let urlReq: URLRequest
 
         do {
-            urlRequest = try create(request)
+            urlReq = try crtReq(request)
         }
         catch {
             completion(.failure(error))
             return
         }
 
-        let task = session.dataTask(with: urlRequest) { data, response, error in
+        let task = session.dataTask(with: urlReq) { [weak self] data, response, error in
             guard
+                let self,
                 let data = data,
                 let response = response as? HTTPURLResponse
             else {
-                completion(.failure(WLNetworkError.sessionFailed(reason: .missingResponse)))
+                completion(.failure(WLNetworkError.sendFailed(.missingResponse)))
                 return
             }
             self.handleDecision(request, data: data, response: response, decisions: request.decisions, completion: completion)
@@ -60,7 +55,6 @@ public extension Session {
         completion: @escaping(Result<T.Response, Error>) -> Void
     ) {
         guard !decisions.isEmpty else {
-            debugPrint("Request Decisions is empty")
             return
         }
 
@@ -83,38 +77,37 @@ public extension Session {
             case .retryWith(_):
                 self.send(request, completion: completion)
 
-            case .stop(let error):
-                completion(.failure(error))
+            case .stop(let err):
+                completion(.failure(err))
 
-            case .done(let response):
-                completion(.success(response))
+            case .done(let resp):
+                completion(.success(resp))
             }
         }
     }
 }
 
+@available(iOS 13.0.0, *)
 public extension Session {
 
-    @available(iOS 13.0.0, *)
     func send<T: Request>(_ request: T) async -> Result<T.Response, Error> {
-        let urlRequest: URLRequest
+        let urlReq: URLRequest
 
         do {
-            urlRequest = try create(request)
-            let (data, response) = try await session.data(for: urlRequest)
+            urlReq = try crtReq(request)
+            let (data, resp) = try await session.data(for: urlReq)
 
-            guard let response = response as? HTTPURLResponse else {
-                return .failure(WLNetworkError.sessionFailed(reason: .missingResponse))
+            guard let resp = resp as? HTTPURLResponse else {
+                return .failure(WLNetworkError.sendFailed(.missingResponse))
             }
 
-            return await handleDecision(request, data: data, response: response, decisions: request.decisions)
+            return await handleDecision(request, data: data, response: resp, decisions: request.decisions)
         }
         catch {
-            return .failure(WLNetworkError.sessionFailed(reason: .failed(error)))
+            return .failure(WLNetworkError.sendFailed(.failed(error)))
         }
     }
 
-    @available(iOS 13.0.0, *)
     private func handleDecision<T: Request>(
         _ request: T,
         data: Data,
@@ -122,8 +115,9 @@ public extension Session {
         decisions: [Decision]
     ) async -> Result<T.Response, Error> {
         guard !decisions.isEmpty else {
-            return .failure(WLNetworkError.decisionFailed(reason: .emptyDecision))
+            return .failure(WLNetworkError.decisionFailed(.emptyDecision))
         }
+        
         var decisions = decisions
         let current = decisions.removeFirst()
 
@@ -140,11 +134,11 @@ public extension Session {
         case .retryWith(_):
             return await send(request)
 
-        case .stop(let error):
-            return .failure(WLNetworkError.decisionFailed(reason: .stop(error)))
+        case .stop(let err):
+            return .failure(WLNetworkError.decisionFailed(.stop(err)))
 
-        case .done(let response):
-            return .success(response)
+        case .done(let resp):
+            return .success(resp)
         }
     }
 }

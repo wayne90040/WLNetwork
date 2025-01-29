@@ -1,10 +1,10 @@
 import Foundation
 
-public struct FormURLEncodeAdaper: RequestAdapter, Parameterable {
+public struct FormURLEncodeAdaper: RequestAdapter {
 
-    public var parameters: Parameters
+    public var parameters: Encodable
 
-    public init(parameters: Parameters) {
+    public init(parameters: Encodable) {
         self.parameters = parameters
     }
 

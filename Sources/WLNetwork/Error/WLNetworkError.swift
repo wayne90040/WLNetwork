@@ -26,17 +26,4 @@ public enum WLNetworkError: Error {
     case decisionFailed(DecisionFailed)
 
     case sendFailed(SendFailed)
-    
-    public var localizedDescription: String {
-        switch self {
-        case .crtReqFailed(let crtReqFailed):
-            return "crtReqFailed"
-            
-        case .decisionFailed(let decisionFailed):
-            return "decisionFailed"
-            
-        case .sendFailed(let sendFailed):
-            return "sendFailed"
-        }
-    }
 }

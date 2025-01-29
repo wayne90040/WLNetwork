@@ -1,8 +1,9 @@
 public enum HttpMethod: String {
-    case Get = "Get"
-    case Post = "Post"
-    case Put = "Put"
-    case Delete = "Delete"
+    case GET
+    case POST
+    case PUT
+    case PATCH
+    case DELETE
 }
 
 public extension HttpMethod {

@@ -2,26 +2,37 @@ public enum ContentType {
     case none
     case formUrlEncoded
     case json
+    case custom(String)
 }
 
 public extension ContentType {
     var value: String {
         switch self {
         case .none:
-            return ""
+            ""
         case .formUrlEncoded:
-            return "application/x-www-form-urlencoded; charset=utf-8"
+            "application/x-www-form-urlencoded; charset=utf-8"
         case .json:
-            return "application/json"
+            "application/json"
+        case .custom(let type):
+            type
         }
     }
     
     var adapter: AnyRequestAdapter? {
-        if self == .none {
+        switch self {
+        case .none:
             return nil
-        }
-        return .init {
-            $0.setValue(value, forHTTPHeaderField: "Content-Type")
+            
+        case .formUrlEncoded, .json:
+            return .init {
+                $0.setValue(value, forHTTPHeaderField: "Content-Type")
+            }
+            
+        case .custom(let string):
+            return .init {
+                $0.setValue(string, forHTTPHeaderField: "Content-Type")
+            }
         }
     }
 }

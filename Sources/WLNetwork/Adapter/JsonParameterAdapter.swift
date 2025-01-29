@@ -1,16 +1,15 @@
 import Foundation
 
-public struct JsonParameterAdapter: RequestAdapter, Parameterable {
-    
-    public var parameters: Parameters
+public struct JsonParameterAdapter: RequestAdapter {
+    public var parameters: Encodable
 
-    public init(parameters: Parameters) {
+    public init(parameters: Encodable) {
         self.parameters = parameters
     }
     
     public func adapted(_ request: inout URLRequest) throws {
         do {
-            let body = try JSONSerialization.data(withJSONObject: parameters, options: [])
+            let body = try JSONEncoder().encode(parameters)
             request.httpBody = body
         }
         catch {

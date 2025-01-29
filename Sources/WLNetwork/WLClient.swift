@@ -1,32 +1,21 @@
 import Foundation
 
-public class Session {
+public class WLClient {
 
     private let session: URLSession
 
     public init(session: URLSession) {
         self.session = session
     }
-
-    private func crtReq<T: Request>(_ request: T) throws -> URLRequest{
-        let url = request.baseURL
-            .appendingPathComponentIfNotEmpty(request)
-
-        var urlReq = URLRequest(url: url, cachePolicy: request.cachePolicy, timeoutInterval: request.timeout)
-
-        try request.adapters.forEach { try $0.adapted(&urlReq) }
-
-        return urlReq
-    }
 }
 
-public extension Session {
+public extension WLClient {
 
-    func send<T: Request>(_ request: T, completion: @escaping(Result<T.Response, Error>) -> Void) {
+    func send<T: WLRequest>(_ request: T, completion: @escaping(Result<T.Response, Error>) -> Void) {
         let urlReq: URLRequest
 
         do {
-            urlReq = try crtReq(request)
+            urlReq = try request.toURLRequest()
         }
         catch {
             completion(.failure(error))
@@ -47,7 +36,7 @@ public extension Session {
         task.resume()
     }
 
-    private func handleDecision<T: Request>(
+    private func handleDecision<T: WLRequest>(
         _ request: T,
         data: Data,
         response: HTTPURLResponse,
@@ -88,9 +77,9 @@ public extension Session {
 }
 
 @available(iOS 13.0.0, *)
-public extension Session {
+public extension WLClient {
     
-    func trySend<T: Request>(_ request: T) async throws -> T.Response? {
+    func trySend<T: WLRequest>(_ request: T) async throws -> T.Response? {
         let res = await sendAsync(request)
         switch res {
         case .success(let resp):
@@ -101,11 +90,11 @@ public extension Session {
         }
     }
 
-    func sendAsync<T: Request>(_ request: T) async -> Result<T.Response, Error> {
+    func sendAsync<T: WLRequest>(_ request: T) async -> Result<T.Response, Error> {
         let urlReq: URLRequest
 
         do {
-            urlReq = try crtReq(request)
+            urlReq = try request.toURLRequest()
             let (data, resp) = try await session.data(for: urlReq)
 
             guard let resp = resp as? HTTPURLResponse else {
@@ -119,7 +108,7 @@ public extension Session {
         }
     }
 
-    private func handleDecision<T: Request>(
+    private func handleDecision<T: WLRequest>(
         _ request: T,
         data: Data,
         response: HTTPURLResponse,

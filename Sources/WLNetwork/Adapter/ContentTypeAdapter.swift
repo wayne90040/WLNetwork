@@ -1,14 +1,6 @@
-//
-//  File.swift
-//  
-//
-//  Created by HSUWEILUN on 2024/12/7.
-//
-
 import Foundation
 
 public struct ContentTypeAdapter: RequestAdapter {
-    
     public var contentType: ContentType
     
     public init(contentType: ContentType) {

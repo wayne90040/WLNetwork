@@ -1,10 +1,9 @@
 import Foundation
 
-public struct URLQueryAdapter: RequestAdapter, Parameterable {
+public struct URLQueryAdapter: RequestAdapter {
+    public var parameters: Encodable
 
-    public var parameters: Parameters
-
-    public init(parameters: Parameters) {
+    public init(parameters: Encodable) {
         self.parameters = parameters
     }
     
@@ -13,15 +12,13 @@ public struct URLQueryAdapter: RequestAdapter, Parameterable {
             throw WLNetworkError.crtReqFailed(.missingURL)
         }
         
-        let queries = parameters.map {
-            URLQueryItem(name: $0.key, value: $0.value as? String)
-        }
+        let query = try QueryParamEncoder().encode(parameters)
         
         guard var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             throw WLNetworkError.crtReqFailed(.URLComponentNil)
         }
         
-        components.queryItems = queries
+        components.query = query
         request.url = components.url
     }
 }

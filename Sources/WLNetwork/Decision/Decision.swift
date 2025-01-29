@@ -2,25 +2,25 @@ import Foundation
 
 public protocol Decision {
     
-    func shouldApply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) -> Bool
+    func shouldApply<T: WLRequest>(_ request: T, data: Data, response: HTTPURLResponse) -> Bool
     
-    func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse, completion: @escaping(DecisionAction<T>) -> Void)
+    func apply<T: WLRequest>(_ request: T, data: Data, response: HTTPURLResponse, completion: @escaping(DecisionAction<T>) -> Void)
 
     @available(iOS 13.0.0, *)
-    func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) async -> DecisionAction<T>
+    func apply<T: WLRequest>(_ request: T, data: Data, response: HTTPURLResponse) async -> DecisionAction<T>
 }
 
 extension Decision {
-    public func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse, completion: @escaping(DecisionAction<T>) -> Void) {
+    public func apply<T: WLRequest>(_ request: T, data: Data, response: HTTPURLResponse, completion: @escaping(DecisionAction<T>) -> Void) {
     }
 
     @available(iOS 13.0.0, *)
-    public func apply<T: Request>(_ request: T, data: Data, response: HTTPURLResponse) async -> DecisionAction<T> {
+    public func apply<T: WLRequest>(_ request: T, data: Data, response: HTTPURLResponse) async -> DecisionAction<T> {
         .continueWith(data, response)
     }
 }
 
-public enum DecisionAction<T: Request> {
+public enum DecisionAction<T: WLRequest> {
     
     /// Continue the handle process with data & response
     case continueWith(Data, HTTPURLResponse)

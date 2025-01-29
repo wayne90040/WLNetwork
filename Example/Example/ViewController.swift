@@ -23,6 +23,23 @@ class ViewController: UIViewController {
                 print(error)
             }
         }
+        
+        let req = StockTWRequest(parameters: .init(
+            period1: "1626969600",
+            period2: "1627277400",
+            interval: "1d",
+            events: "history")
+        )
+        Task {
+            do {
+                let resp = try await req.send()
+                print(resp)
+            }
+            catch {
+                print(error)
+            }
+    
+        }
 
     }
 }

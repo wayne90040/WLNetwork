@@ -13,8 +13,13 @@ extension WLRequest {
             ContentTypeAdapter(contentType: contentType)
         ]
         
-        if method == .GET, let parameters {
-            adapters = adapters + [URLQueryAdapter(parameters: parameters)] + self.adapters
+        if method == .GET {
+            if let parameters {
+                adapters = adapters + [URLQueryAdapter(parameters: parameters)] + self.adapters
+            }
+            else {
+                adapters = adapters + self.adapters
+            }
         }
        
         if method == .POST {

@@ -1,7 +1,6 @@
 import Foundation
 
 extension WLRequest {
-    
     var url: URL {
         path.isEmpty ? baseURL : baseURL.appendingPathComponent(path)
     }
@@ -14,7 +13,7 @@ extension WLRequest {
             ContentTypeAdapter(contentType: contentType)
         ]
         
-        if method == .GET {
+        if method == .GET, let parameters {
             adapters = adapters + [URLQueryAdapter(parameters: parameters)] + self.adapters
         }
        

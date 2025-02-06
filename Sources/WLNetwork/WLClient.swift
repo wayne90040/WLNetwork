@@ -1,7 +1,6 @@
 import Foundation
 
 public class WLClient {
-
     private let session: URLSession
 
     public init(session: URLSession) {

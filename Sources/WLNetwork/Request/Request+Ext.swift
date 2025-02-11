@@ -27,6 +27,8 @@ extension WLRequest {
             case .json:
                 adapters.append(JsonParameterAdapter(parameters: parameters))
                 
+            
+                
             default:
                 break
             }

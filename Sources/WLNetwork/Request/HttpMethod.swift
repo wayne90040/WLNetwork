@@ -5,11 +5,3 @@ public enum HttpMethod: String {
     case PATCH
     case DELETE
 }
-
-public extension HttpMethod {
-    var adapter: AnyRequestAdapter {
-        .init {
-            $0.httpMethod = rawValue
-        }
-    }
-}

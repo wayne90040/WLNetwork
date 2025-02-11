@@ -1,7 +1,6 @@
 import Foundation
 
 public struct JsonDecodeDecision: Decision {
-    
     public init() { }
     
     public func shouldApply<T: WLRequest>(_ request: T, data: Data, response: HTTPURLResponse) -> Bool {
@@ -14,7 +13,7 @@ public struct JsonDecodeDecision: Decision {
             completion(.done(value))
         }
         catch { 
-            completion(.stop(WLNetworkError.decisionFailed(.stop(error))))
+            completion(.stop(WLNetworkError.decodeFailed(error)))
         }
     }
     
@@ -25,7 +24,7 @@ public struct JsonDecodeDecision: Decision {
             return .done(value)
         }
         catch {
-            return .stop(WLNetworkError.decisionFailed(.stop(error)))
+            return .stop(WLNetworkError.decodeFailed(error))
         }
     }
 }

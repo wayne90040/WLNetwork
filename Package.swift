@@ -10,13 +10,20 @@ let package = Package(
         .iOS(.v13)
     ],
     products: [
-        .library(
-            name: "WLNetwork",
-            targets: ["WLNetwork"]),
+        .library(name: "WLNetwork", targets: ["WLNetwork"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/vapor/multipart-kit.git", from: "4.7.1"),
+        .package(url: "https://github.com/apple/swift-nio.git", from: "2.0.0"),
     ],
     targets: [
         .target(
-            name: "WLNetwork"),
+            name: "WLNetwork",
+            dependencies: [
+                .product(name: "MultipartKit", package: "multipart-kit"),
+                .product(name: "NIOFoundationCompat", package: "swift-nio")
+            ]
+        ),
         .testTarget(
             name: "WLNetworkTests",
             dependencies: ["WLNetwork"]),

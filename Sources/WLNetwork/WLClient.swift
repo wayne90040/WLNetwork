@@ -27,7 +27,7 @@ public extension WLClient {
                 let data = data,
                 let response = response as? HTTPURLResponse
             else {
-                completion(.failure(WLNetworkError.sendFailed(.missingResponse)))
+                completion(.failure(WLNetworkError.responseIsNil))
                 return
             }
             self.handleDecision(request, data: data, response: response, decisions: request.decisions, completion: completion)
@@ -95,15 +95,15 @@ public extension WLClient {
         do {
             urlReq = try request.toURLRequest()
             let (data, resp) = try await session.data(for: urlReq)
-
+            
             guard let resp = resp as? HTTPURLResponse else {
-                return .failure(WLNetworkError.sendFailed(.missingResponse))
+                return .failure(WLNetworkError.responseIsNil)
             }
 
             return await handleDecision(request, data: data, response: resp, decisions: request.decisions)
         }
         catch {
-            return .failure(WLNetworkError.sendFailed(.failed(error)))
+            return .failure(WLNetworkError.error(error))
         }
     }
 
@@ -114,7 +114,7 @@ public extension WLClient {
         decisions: [Decision]
     ) async -> Result<T.Response, Error> {
         guard !decisions.isEmpty else {
-            return .failure(WLNetworkError.decisionFailed(.emptyDecision))
+            return .failure(WLNetworkError.decisionIsEmpty)
         }
         
         var decisions = decisions
@@ -133,8 +133,8 @@ public extension WLClient {
         case .retryWith(_):
             return await sendAsync(request)
 
-        case .stop(let err):
-            return .failure(WLNetworkError.decisionFailed(.stop(err)))
+        case .stop(let error):
+            return .failure(WLNetworkError.stopDecision(error))
 
         case .done(let resp):
             return .success(resp)

@@ -24,11 +24,11 @@ extension WLRequest {
        
         if method == .POST {
             switch contentType {
-            case .json:
-                adapters.append(JsonParameterAdapter(parameters: parameters))
+            case .json: adapters.append(JsonParameterAdapter(parameters: parameters))
                 
-            default:
-                break
+            case .formData: adapters.append(FormDataEncodeAdapter(parameters: parameters))
+                
+            default: break
             }
             adapters = adapters + self.adapters
         }

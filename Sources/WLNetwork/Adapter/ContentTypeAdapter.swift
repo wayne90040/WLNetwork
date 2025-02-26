@@ -8,6 +8,11 @@ public struct ContentTypeAdapter: RequestAdapter {
     }
     
     public func adapted(_ request: inout URLRequest) throws {
-        request.setValue(contentType.value, forHTTPHeaderField: "Content-Type")
+        switch contentType {
+        case .formData, .json, .custom:
+            request.setValue(contentType.value, forHTTPHeaderField: "Content-Type")
+            
+        case .none: break
+        }
     }
 }

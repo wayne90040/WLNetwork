@@ -1,10 +1,6 @@
 import Foundation
 
 extension WLRequest {
-    var url: URL {
-        path.isEmpty ? baseURL : baseURL.appendingPathComponent(path)
-    }
-    
     func toURLRequest() throws -> URLRequest {
         var urlRequest = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: timeout)
         
@@ -25,9 +21,7 @@ extension WLRequest {
         if method == .POST {
             switch contentType {
             case .json: adapters.append(JsonParameterAdapter(parameters: parameters))
-                
             case .formData: adapters.append(FormDataEncodeAdapter(parameters: parameters))
-                
             default: break
             }
             adapters = adapters + self.adapters

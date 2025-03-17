@@ -31,7 +31,12 @@ public struct FormDataEncoder: Encodable {
                 return data
             }
             
-            if let convertible = value as? any FileFormDataConvertible {
+            if let convertible = value as? [FileFormDataConvertible] {
+                let data = try encode(convertible)
+                return data
+            }
+            
+            if let convertible = value as? FileFormDataConvertible {
                 if let part = convertible.multipart {
                     var buffer = ByteBufferAllocator().buffer(capacity: 0)
                     try MultipartSerializer().serialize(parts: [part], boundary: "\(boundary)", into: &buffer)
@@ -67,6 +72,14 @@ public struct FormDataEncoder: Encodable {
         var data = Data()
         try serializeFile(value.file, into: &data)
         try serializeText(value.texts, into: &data)
+        return data
+    }
+    
+    private func encode(_ value: [FileFormDataConvertible]) throws -> Data {
+        var data = Data()
+        for file in value {
+            try serializeFile(file, into: &data)
+        }
         return data
     }
     

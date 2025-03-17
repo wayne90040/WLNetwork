@@ -80,6 +80,9 @@ public struct FormDataEncoder: Encodable {
         for file in value {
             try serializeFile(file, into: &data)
         }
+        var buffer = ByteBufferAllocator().buffer(capacity: 0)
+        MultipartSerializer().serializeEnding(boundary: "\(boundary)", into: &buffer)
+        data.append(.init(buffer: buffer))
         return data
     }
     
